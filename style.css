@@ -1,38 +1,79 @@
+/* --- STYLE GLOBAL --- */
+
 body {
     font-family: Arial, sans-serif;
     background: #f5f8ff;
     padding: 40px;
     text-align: center;
+    color: #1E3A5F;
 }
 
 h1 {
     color: #1E3A5F;
+    font-size: 36px;
+    margin-bottom: 20px;
 }
+
+/* --- QUESTION --- */
 
 #question {
     font-size: 28px;
     margin: 20px;
+    font-weight: bold;
 }
+
+/* --- PROGRESSION --- */
+
+#progress {
+    font-size: 20px;
+    margin-bottom: 20px;
+    color: #2A6DB0;
+}
+
+/* --- CHOIX --- */
 
 .choice {
     background: #2A6DB0;
     color: white;
     padding: 15px;
-    margin: 10px;
+    margin: 10px auto;
     border-radius: 10px;
     cursor: pointer;
     width: 300px;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
+    font-size: 20px;
+    transition: 0.2s;
 }
 
 .choice:hover {
     background: #1E3A5F;
+    transform: scale(1.03);
 }
 
+/* --- RESULTAT FINAL --- */
+
 #result {
-    font-size: 24px;
-    margin-top: 30px;
+    font-size: 26px;
+    margin-top: 40px;
     color: #4CAF50;
+    font-weight: bold;
 }
+
+/* --- BOUTON RECOMMENCER --- */
+
+.restart {
+    background: #4CAF50;
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+    font-size: 20px;
+    border: none;
+    margin-top: 20px;
+    transition: 0.2s;
+}
+
+.restart:hover {
+    background: #3e8e41;
+    transform: scale(1.05);
+}
+
