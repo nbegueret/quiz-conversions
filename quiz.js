@@ -1,4 +1,5 @@
 const allQuestions = [
+    // --- anciennes questions ---
     { q: "Convertir 2,5 m en cm", c: ["250", "25", "2500", "2.5"], a: 0 },
     { q: "Convertir 0,03 km en m", c: ["300", "30", "3", "0.3"], a: 1 },
     { q: "Convertir 450 cm en m", c: ["4.5", "45", "0.45", "450"], a: 0 },
@@ -9,23 +10,40 @@ const allQuestions = [
     { q: "Convertir 5,6 km en m", c: ["5600", "560", "56", "56000"], a: 0 },
     { q: "Convertir 0,002 kL en L", c: ["2", "0.2", "20", "200"], a: 0 },
     { q: "Convertir 120 min en h", c: ["2", "12", "0.2", "20"], a: 0 },
-    { q: "Convertir 0,9 m en cm", c: ["90", "9", "900", "0.9"], a: 0 },
-    { q: "Convertir 45 cL en L", c: ["0.45", "4.5", "45", "0.045"], a: 0 },
-    { q: "Convertir 0,07 kg en g", c: ["70", "7", "700", "0.7"], a: 0 },
-    { q: "Convertir 3,5 h en min", c: ["210", "21", "2.1", "35"], a: 0 },
-    { q: "Convertir 0,6 L en cL", c: ["60", "6", "600", "0.6"], a: 0 },
-    { q: "Convertir 2500 mm en m", c: ["2.5", "25", "0.25", "250"], a: 0 },
-    { q: "Convertir 0,003 km en m", c: ["3", "0.3", "30", "300"], a: 0 },
-    { q: "Convertir 8,4 L en cL", c: ["840", "84", "8.4", "8400"], a: 0 },
-    { q: "Convertir 0,02 h en min", c: ["1.2", "12", "0.12", "120"], a: 0 },
-    { q: "Convertir 900 g en kg", c: ["0.9", "9", "90", "0.09"], a: 0 }
+
+    // --- nouvelles questions µ ---
+    { q: "Convertir 4 µm en m", c: ["0.000004", "0.004", "0.04", "4"], a: 0 },
+    { q: "Convertir 250 µL en L", c: ["0.00025", "0.025", "0.0025", "25"], a: 0 },
+    { q: "Convertir 3 µg en g", c: ["0.000003", "0.003", "0.03", "3"], a: 0 },
+
+    // --- nouvelles questions n ---
+    { q: "Convertir 50 nm en m", c: ["0.00000005", "0.00005", "0.005", "50"], a: 0 },
+    { q: "Convertir 800 nL en L", c: ["0.0000008", "0.0008", "0.008", "8"], a: 0 },
+    { q: "Convertir 12 ng en g", c: ["0.000000012", "0.000012", "0.012", "12"], a: 0 },
+
+    // --- nouvelles questions p ---
+    { q: "Convertir 300 pm en m", c: ["0.0000000003", "0.0000003", "0.0003", "300"], a: 0 },
+    { q: "Convertir 900 pL en L", c: ["0.0000000009", "0.0000009", "0.0009", "900"], a: 0 },
+    { q: "Convertir 7 pg en g", c: ["0.000000000007", "0.000000007", "0.000007", "7"], a: 0 },
+
+    // --- nouvelles questions M ---
+    { q: "Convertir 0.003 Mm en m", c: ["3000", "3", "300", "3000000"], a: 0 },
+    { q: "Convertir 2 ML en L", c: ["2000000", "2000", "200", "2"], a: 0 },
+    { q: "Convertir 0.004 Mg en g", c: ["4000", "4", "40", "400"], a: 0 },
+
+    // --- nouvelles questions G ---
+    { q: "Convertir 3 Gg en g", c: ["3000000000", "3000000", "3000", "3"], a: 0 },
+    { q: "Convertir 1 GL en L", c: ["1000000000", "1000000", "1000", "1"], a: 0 },
+    { q: "Convertir 0.006 GA en A", c: ["6000000", "6000", "600", "6"], a: 0 }
 ];
 
+// Tirage aléatoire de 20 questions
 const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 20);
 
 let index = 0;
 let score = 0;
 
+// Mélange des réponses
 function shuffle(array) {
     return array.sort(() => Math.random() - 0.5);
 }
@@ -75,3 +93,4 @@ function restartQuiz() {
 }
 
 showQuestion();
+
