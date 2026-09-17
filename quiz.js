@@ -26,6 +26,10 @@ const questions = allQuestions.sort(() => Math.random() - 0.5).slice(0, 20);
 let index = 0;
 let score = 0;
 
+function shuffle(array) {
+    return array.sort(() => Math.random() - 0.5);
+}
+
 function showQuestion() {
     document.getElementById("progress").textContent =
         `Question ${index + 1} / 20`;
@@ -36,11 +40,13 @@ function showQuestion() {
     const choicesDiv = document.getElementById("choices");
     choicesDiv.innerHTML = "";
 
-    q.c.forEach((choice, i) => {
+    const shuffledChoices = shuffle(q.c.map((choice, i) => ({ choice, index: i })));
+
+    shuffledChoices.forEach(obj => {
         const btn = document.createElement("div");
         btn.className = "choice";
-        btn.textContent = choice;
-        btn.onclick = () => validate(i);
+        btn.textContent = obj.choice;
+        btn.onclick = () => validate(obj.index);
         choicesDiv.appendChild(btn);
     });
 }
@@ -58,9 +64,14 @@ function validate(i) {
         document.getElementById("question").textContent = "";
         document.getElementById("choices").innerHTML = "";
         document.getElementById("progress").textContent = "";
-        document.getElementById("result").textContent =
-            `Score final : ${score} / 20`;
+        document.getElementById("result").innerHTML =
+            `Score final : ${score} / 20 <br><br>
+             <button onclick="restartQuiz()" class="restart">Recommencer</button>`;
     }
+}
+
+function restartQuiz() {
+    location.reload();
 }
 
 showQuestion();
